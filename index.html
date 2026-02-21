@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heaven view</title>
+<style>
+    /* Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #1e1e1e;
+        color: #fff;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 40px 0 20px;
+        font-size: 3em;
+        letter-spacing: 2px;
+        color: #ffdd59;
+        text-shadow: 0 0 10px #ffdd59;
+    }
+
+    /* Gallery Container */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1300px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    /* Gallery Item */
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: transform 0.5s, z-index 0.5s;
+        filter: grayscale(20%);
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.1) rotate(-1deg);
+        z-index: 5;
+        filter: grayscale(0%);
+    }
+
+    /* Image Styling */
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s, filter 0.5s;
+        display: block;
+        border-radius: 20px;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.15) rotate(2deg);
+        filter: brightness(1.1) contrast(1.1);
+    }
+
+    /* Caption Styling */
+    .caption {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        font-size: 1.1em;
+        opacity: 0;
+        transition: opacity 0.5s, transform 0.5s;
+        transform: translateY(20px);
+    }
+
+    .gallery-item:hover .caption {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Overlapping effect on odd rows */
+    .gallery-item:nth-child(odd) {
+        transform: translateY(10px);
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.2em;
+        }
+        .caption {
+            font-size: 1em;
+            padding: 10px;
+        }
+        .gallery-item:nth-child(odd) {
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery {
+            gap: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<h1>Premium Photo Gallery</h1>
+
+<div class="gallery">
+    <div class="gallery-item">
+        <img src="https://picsum.photos/id/1015/600/400" alt="Mountain View">
+        <div class="caption">Mountain View</div>
+    </div>
+    <div class="gallery-item">
+        <img src="https://picsum.photos/id/1025/600/400" alt="Majestic Lion">
+        <div class="caption">Majestic Lion</div>
+    </div>
+    <div class="gallery-item">
+        <img src="https://picsum.photos/id/1035/600/400" alt="Forest Path">
+        <div class="caption">Forest Path</div>
+    </div>
+    <div class="gallery-item">
+        <img src="https://picsum.photos/id/1045/600/400" alt="Calm Lake">
+        <div class="caption">Calm Lake</div>
+    </div>
+    <div class="gallery-item">
+        <img src="https://picsum.photos/id/1055/600/400" alt="City Skyline">
+        <div class="caption">City Skyline</div>
+    </div>
+    <div class="gallery-item">
+        <img src="https://picsum.photos/id/1065/600/400" alt="Desert Dunes">
+        <div class="caption">Desert Dunes</div>
+    </div>
+    <div class="gallery-item">
+        <img src="https://picsum.photos/id/1075/600/400" alt="Ocean Sunset">
+        <div class="caption">Ocean Sunset</div>
+    </div>
+    <div class="gallery-item">
+        <img src="https://picsum.photos/id/1085/600/400" alt="Snowy Peaks">
+        <div class="caption">Snowy Peaks</div>
+    </div>
+    <div class="gallery-item">
+        <img src="https://picsum.photos/id/1095/600/400" alt="Golden Forest">
+        <div class="caption">Golden Forest</div>
+    </div>
+</div>
+
+</body>
+</html>
