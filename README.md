@@ -112,3 +112,5 @@ Adding Images: Add new images to the images/ folder and add corresponding <div c
 Styling: Modify style.css to change colors, fonts, grid layout, or hover effects.
 
 Captions: Change the <p> content below each image to describe your photos.
+output:
+ https://aashikbasha07.github.io/project-6/
